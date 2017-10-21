@@ -1,0 +1,46 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content padding>
+   <div class="row responsive-md">
+      <div class="col col-50 col-offset-25">
+         <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input #email type="email" required  placeholder="informe seu email" [(ngModel)]="credencial.email">
+            </ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label stacked>Senha</ion-label>
+            <ion-input #password  type="password" placeholder="senha" [(ngModel)]="credencial.senha"> ></ion-input>
+         </ion-item>
+         <button ion-button block type="submit" (click)="autenticar_Usuario_ComEmail()" >
+         Entrar
+         </button>
+         <button ion-button block clear (click)="criarConta()">
+         Criar conta
+         </button>
+         <button ion-button block clear (click)="resetarSenha()">
+         Esqueci minha senha
+         </button>
+
+         <button ion-button center (click)="facebookLogin()">
+           Log In with Facebook
+         </button>
+
+
+         <ion-card *ngIf="userProfile">
+            <img [src]="userProfile.photoURL"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{ userProfile.displayName }}
+              </ion-card-title>
+              <p>
+                The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
+              </p>
+            </ion-card-content>
+          </ion-card>
+         
+      </div>
+   </div>
+</ion-content>
