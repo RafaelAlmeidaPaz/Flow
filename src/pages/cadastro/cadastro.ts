@@ -4,21 +4,21 @@ import { AlertController } from 'ionic-angular';
 
 import {Credencial} from "../../models/credencial";
 
-import { CadastrarProvider } from '../../providers/providers';
+import { CadastroProvider } from '../../providers/providers';
 
 import {TabsPage}  from "../tabs/tabs";
 
 
 @IonicPage()
 @Component({
-  selector: 'page-cadastrar-usuario',
-  templateUrl: 'cadastrar-usuario.html',
+  selector: 'page-cadastro',
+  templateUrl: 'cadastro.html',
 })
-export class CadastrarUsuarioPage {
+export class CadastroPage {
   credencial:Credencial;
 
   constructor(public navCtrl: NavController,
-    public navParams: NavParams, public cadastroProvider: CadastrarProvider,
+    public navParams: NavParams, public cadastroProvider: CadastroProvider,
     public alertas: AlertController)
     {
       this.credencial = new Credencial();

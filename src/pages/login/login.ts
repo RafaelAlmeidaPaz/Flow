@@ -10,10 +10,10 @@ import {Credencial} from "../../models/credencial";
 import { LoginProvider } from '../../providers/providers';
 
 /* Pages*/
-import {CadastrarUsuarioPage}  from "../cadastrar-usuario/cadastrar-usuario";
+import {CadastroPage}  from "../cadastro/cadastro";
 import {HomePage}  from "../home/home";
 import {TabsPage}  from "../tabs/tabs";
-import {ResetarSenhaPage} from "../resetar-senha/resetar-senha";
+import {ResetSenhaPage} from "../reset_senha/reset_senha";
 
 /**
  * Generated class for the LoginPage page.
@@ -60,7 +60,7 @@ export class LoginPage {
 */
 
   criarConta(){
-    this.navCtrl.setRoot(CadastrarUsuarioPage)
+    this.navCtrl.setRoot(CadastroPage)
   }
 
   /* Passa os parametros do HTML para o Provider validar no Firebase */
@@ -69,7 +69,7 @@ export class LoginPage {
   }
 
   resetarSenha(){
-    this.navCtrl.setRoot(ResetarSenhaPage)
+    this.navCtrl.setRoot(ResetSenhaPage)
   }
 
   ionViewDidLoad() {

@@ -1,28 +1,38 @@
+/* Componentes */
 import { NgModule, ErrorHandler } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
 import firebase from 'firebase';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
+/* Paginas */
 
-import {CadastrarUsuarioPage} from '../pages/cadastrar-usuario/cadastrar-usuario';
+import {CadastroPage} from '../pages/cadastro/cadastro';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { LogoutPage } from '../pages/logout/logout';
-import { ResetarSenhaPage } from '../pages/resetar-senha/resetar-senha'
+import { ResetSenhaPage } from '../pages/reset_senha/reset_senha';
+import { CardapioPage } from '../pages/cardapio/cardapio';
+import { HistoricoPage } from '../pages/historico/historico';
+import { DadosUsuarioPage } from '../pages/dados-usuario/dados-usuario';
+import { ApresentacaoPage } from "../pages/apresentacao/apresentacao";
+import { PedidoPage } from '../pages/pedido/pedido';
+import { PagamentoPage } from '../pages/pagamento/pagamento';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+/* Providers */
 
-import { LoginProvider } from '../providers/providers';
-import { CadastrarProvider } from '../providers/providers';
-import { ResetarSenhaProvider } from '../providers/resetar-senha/resetar-senha';
+import { LoginProvider, CadastroProvider, ResetSenhaProvider, EmpresaProvider,
+HistoricoComprasProvider, DadosUsuarioProvider, PedidoProvider, PagamentoProvider
+} from '../providers/providers';
+
+/*Configuração para chamada da API do Firebase*/
 
 var config = {
 apiKey: "AIzaSyA33AWF5lw3SEu7c2ItRUI1yMiCpvIBozo",
@@ -40,9 +50,15 @@ messagingSenderId: "897574862361"
     ContactPage,
     HomePage,
     TabsPage,
-    CadastrarUsuarioPage,
+    CadastroPage,
     LogoutPage,
-    ResetarSenhaPage
+    ResetSenhaPage,
+    CardapioPage,
+    HistoricoPage,
+    DadosUsuarioPage,
+    ApresentacaoPage,
+    PedidoPage,
+    PagamentoPage
 
   ],
   imports: [
@@ -58,17 +74,30 @@ messagingSenderId: "897574862361"
     ContactPage,
     HomePage,
     TabsPage,
-    CadastrarUsuarioPage,
+    CadastroPage,
     LogoutPage,
-    ResetarSenhaPage
+    ResetSenhaPage,
+    CardapioPage,
+    HistoricoPage,
+    DadosUsuarioPage,
+    ApresentacaoPage,
+    PedidoPage,
+    PagamentoPage
+
+
   ],
   providers: [
     StatusBar,
     SplashScreen, Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
-    CadastrarProvider,
-    ResetarSenhaProvider
+    CadastroProvider,
+    ResetSenhaProvider,
+    EmpresaProvider,
+    HistoricoComprasProvider,
+    DadosUsuarioProvider,
+    PedidoProvider,
+    PagamentoProvider
   ]
 })
   export class AppModule {

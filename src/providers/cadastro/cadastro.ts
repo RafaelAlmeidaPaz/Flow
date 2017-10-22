@@ -15,7 +15,7 @@ import {Credencial} from "../../models/credencial";
 @Injectable()
 
 
-export class CadastrarProvider {
+export class CadastroProvider {
   data: any;
   zone: NgZone;
 
@@ -38,6 +38,8 @@ export class CadastrarProvider {
      var milesegundos = data.getMilliseconds();
      return [dia, mes, ano].join('/') + ' ' + [hora, minutos,milesegundos].join(':');
     }
+
+    /* Chamada do Firebase para abrir comunicação e passar dados do usuário */
 
     firebase.auth().createUserWithEmailAndPassword(credencial.email, credencial.senha)
       .then( newUser => {

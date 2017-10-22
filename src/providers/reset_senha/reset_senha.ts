@@ -12,7 +12,7 @@ import {Credencial} from "../../models/credencial";
   and Angular DI.
 */
 @Injectable()
-export class ResetarSenhaProvider {
+export class ResetSenhaProvider {
 
   resetDeSenhaSucessoEventEmitter:EventEmitter<any>
   resetDeSenhaFalhaEventEmitter:EventEmitter<any>;

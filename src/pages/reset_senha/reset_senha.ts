@@ -4,21 +4,21 @@ import { AlertController } from 'ionic-angular';
 
 import {Credencial} from "../../models/credencial";
 
-import { ResetarSenhaProvider } from '../../providers/providers';
+import { ResetSenhaProvider } from '../../providers/providers';
 
 
 @IonicPage()
 @Component({
-  selector: 'page-resetar-senha',
-  templateUrl: 'resetar-senha.html',
+  selector: 'page-reset-senha',
+  templateUrl: 'reset_senha.html',
 })
 
-export class ResetarSenhaPage {
+export class ResetSenhaPage {
   credencial:Credencial;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public resetSenhaProvider: ResetarSenhaProvider, public alertas: AlertController) {
+    public resetSenhaProvider: ResetSenhaProvider, public alertas: AlertController) {
     this.credencial = new Credencial();
   }
 
